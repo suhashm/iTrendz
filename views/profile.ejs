@@ -1,0 +1,62 @@
+<!-- views/profile.ejs -->
+<!doctype html>
+<html>
+<head>
+    <title>Node Authentication</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
+    <style>
+        body        { padding-top:80px; word-wrap:break-word; }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $("#getFriend1").click(function(){
+                //alert($("#idVal").text());
+                var a = $("#idVal").text();
+                //$.get('https://www.googleapis.com/plus/v1/people/me/people/connected?maxResults=40&orderBy=alphabetical&pageToken=nextPageToken&key=AIzaSyAme22I2oPiwLg-h2AfN4oNCWd8om2pEt8').success(function(data){
+                //$.get('https://www.googleapis.com/plus/v1/people/105659115787965280769/people/visible?maxResults=40&orderBy=alphabetical&key=AIzaSyAme22I2oPiwLg-h2AfN4oNCWd8om2pEt8').success(function(data){
+                //$.get('https://www.googleapis.com/plus/v1/people/105659115787965280769/people/visible?maxResults=40&orderBy=alphabetical&key=AIzaSyAme22I2oPiwLg-h2AfN4oNCWd8om2pEt8').success(function(data){
+                $.get('https://www.googleapis.com/plus/v1/people/105659115787965280769/people/visible?maxResults=40&orderBy=alphabetical&key=ya29.qwAdYYMYyUCZA1x3tWzFGxDqVPowms-m5guieKAoVY8_uKfe2oxMzPMUBUBFrjUpsdNnetfaIaJliQ').success(function(data){
+
+                //$.get('https://www.googleapis.com/plus/v1/people/105659115787965280769/people/visible').success(function(data){
+                    alert("success");
+                }).error(function(data){
+                   alert("error");
+                });
+                //alert("done");
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="container">
+
+    <div class="page-header text-center">
+        <h1><span class="fa fa-anchor"></span> Profile Page</h1>
+        <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+    </div>
+
+    <div class="row">
+        <!--<iframe src="http://bourneagain.github.io/itrends/" class="col-lg-12">-->
+            <!--<p>Your browser does not support iframes.</p>-->
+        <!--</iframe>-->
+        <!-- GOOGLE INFORMATION -->
+        <div class="col-sm-6">
+            <div class="well">
+                <h3 class="text-danger"><span class="fa fa-google-plus"></span> Google</h3>
+
+                <p>
+                    <strong>USER</strong>: <%= user %><br>
+                    <div id="idVal"><%= user %></div>
+                </p>
+                <button id="getFriend"> Get Friends</button>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+</body>
+</html>
