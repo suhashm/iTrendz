@@ -1,8 +1,21 @@
 
 <head>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link href="css/toastr.css" rel="stylesheet">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://online.tableausoftware.com/javascripts/api/tableau_v8.js"></script>
+    <script src="https://cdn.jsdelivr.net/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="css/toastr.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+    </script>
     <!-- <script src="jquery.bpopup.js"></script> -->
 </head>
 
@@ -13,6 +26,9 @@
     }
     .tab-icon-mail{
         display: none !important;
+    }
+    body{
+        background-color: #E5E5E5;
     }
 </style>
 <script>
@@ -39,7 +55,21 @@
     $(document).ready(function(){
         $(initializeViz);
         $(listenToMarksSelection);
+        toastr.success("Successfully logged in");
+        $("#lgOut").on('click', function(){
+            toastr.success("Successfully Logged Out !");
+           setTimeout(function(){
+              // alert("time out click")
+               window.location.replace("/");
+           }, 2000);
+            //var url = "http://stackoverflow.com";
+//            var url = "/";
+//            $(location).attr('href',url);
 
+            /*alert("log out clicked");
+           window.location.replace("/");*/
+
+        });
 
     });
 //    $("iframe").load(function(){
@@ -98,9 +128,50 @@
 <!-- <button type="button" onclick="$('#tableauViz').html(''); initializeViz()" >text</button>  -->
 <!-- <button type="button" onclick="filterSingleValue()" >text</button>  -->
 <div class="col-sm-12">
-<div class="col-sm-2">SIDEBAR
+<!--<div class="col-sm-2">SIDEBAR-->
+   <!-- <div id="wrapper" class="toggled">
+
+        &lt;!&ndash; Sidebar &ndash;&gt;
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                        Start Bootstrap
+                    </a>
+                </li>
+                <li>
+                    <a href="#">Dashboard</a>
+                </li>
+                <li>
+                    <a href="#">Shortcuts</a>
+                </li>
+                <li>
+                    <a href="#">Overview</a>
+                </li>
+                <li>
+                    <a href="#">Events</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="#">Services</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+        &lt;!&ndash; /#sidebar-wrapper &ndash;&gt;
+
+        &lt;!&ndash; Page Content &ndash;&gt;
+        &lt;!&ndash;<a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>&ndash;&gt;
+
+    </div>-->
+<!--</div>-->
+<div id="tableauViz" class="col-sm-10" style="padding-top: 2% "><i class="fa fa-bars fa-lg"></i></div>
+<button id="lgOut" class="col-sm-2 btn btn-default"> <i class="fa fa-sign-out"></i>logout</button>
+
 </div>
-<div id="tableauViz" class="col-sm-10"></div>
-</div>
-<div id="dialog"></div>
+<div id="dialog" style="display: none"></div>
 <div id="dialog2"></div><div id="dialog3"></div>

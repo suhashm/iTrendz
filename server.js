@@ -27,6 +27,7 @@ app.set('view engine', 'ejs'); // set up ejs for templating
 //app.set('views', __dirname+'/views');
 //app.engine('html', require('ejs').renderFile);
 // required for passport
+app.use(express.static(__dirname + "/views"));
 app.use(session({ secret: 'itrenzitrendzitrendz' })); // session secret
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
