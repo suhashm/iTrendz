@@ -1,5 +1,6 @@
 
 <head>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://online.tableausoftware.com/javascripts/api/tableau_v8.js"></script>
     <!-- <script src="jquery.bpopup.js"></script> -->
@@ -96,7 +97,10 @@
 </script>
 <!-- <button type="button" onclick="$('#tableauViz').html(''); initializeViz()" >text</button>  -->
 <!-- <button type="button" onclick="filterSingleValue()" >text</button>  -->
-<div id="tableauViz"></div>
+<div class="col-sm-12">
+<div class="col-sm-2">SIDEBAR
+</div>
+<div id="tableauViz" class="col-sm-10"></div>
+</div>
 <div id="dialog"></div>
-<div id="dialog2"></div>
-<div id="dialog3"></div>
+<div id="dialog2"></div><div id="dialog3"></div>
