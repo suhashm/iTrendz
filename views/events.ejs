@@ -1,0 +1,101 @@
+
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://online.tableausoftware.com/javascripts/api/tableau_v8.js"></script>
+    <!-- <script src="jquery.bpopup.js"></script> -->
+</head>
+
+<style>
+    #tableauViz {
+        height: 600px;
+        min-width: 400px;
+    }
+    .tab-icon-mail{
+        display: none !important;
+    }
+</style>
+<script>
+    var viz, workbook, activeSheet,a,b,c,d,e,f,g;
+
+    function initializeViz() {
+
+//alert("hi");
+        var placeholderDiv = document.getElementById("tableauViz");
+        var url = "https://public.tableausoftware.com/views/itrends/iTrends?:embed=y&:display_count=no";
+        var options = {
+            width: placeholderDiv.offsetWidth,
+            height: placeholderDiv.offsetHeight,
+            hideTabs: true,
+            hideToolbar: true,
+            onFirstInteractive: function () {
+                workbook = viz.getWorkbook();
+                activeSheet = workbook.getActiveSheet().getWorksheets()[0];
+            }
+        };
+        viz = new tableauSoftware.Viz(placeholderDiv, url, options);
+    }
+
+    $(document).ready(function(){
+        $(initializeViz);
+        $(listenToMarksSelection);
+
+
+    });
+//    $("iframe").load(function(){
+//
+//        //    var damageMessage = $(this).contents().find(".mw_error").text();
+//        alert("done loading");
+//
+//    });
+    function filterSingleValue() {
+        console.log(activeSheet);
+        activeSheet.applyFilterAsync(
+                "Eventid",
+                "1",
+                tableauSoftware.FilterUpdateType.REPLACE);
+    }
+
+    function revertAll() {
+        workbook.revertAllAsync();
+    }
+
+
+    //events
+
+    function listenToMarksSelection() {
+        viz.addEventListener(tableauSoftware.TableauEventName.MARKS_SELECTION, onMarksSelection);
+        console.log("EVENT TRACKING ADDED");
+    }
+
+    function onMarksSelection(marksEvent) {
+        return marksEvent.getMarksAsync().then(reportSelectedMarks);
+    }
+
+    function reportSelectedMarks(marks) {
+        var html = [];
+        for (var markIndex = 0; markIndex < marks.length; markIndex++) {
+            var pairs = marks[markIndex].getPairs();
+            html.push("<b>Mark " + markIndex + ":</b><ul>");
+            for (var pairIndex = 0; pairIndex < pairs.length; pairIndex++) {
+                var pair = pairs[pairIndex];
+                html.push("<li><b>fieldName:</b> " + pair.fieldName);
+                html.push("<br/><b>formattedValue:</b> " + pair.formattedValue + "</li>");
+            }
+            html.push("</ul>");
+        }
+
+        var dialog = $("#dialog");
+        dialog.html(html.join(""));
+        dialog.dialog("open");
+
+    }
+
+    function removeMarksSelectionEventListener() {
+        viz.removeEventListener(tableauSoftware.TableauEventName.MARKS_SELECTION, onMarksSelection);
+    }
+</script>
+<!-- <button type="button" onclick="$('#tableauViz').html(''); initializeViz()" >text</button>  -->
+<!-- <button type="button" onclick="filterSingleValue()" >text</button>  -->
+<div id="tableauViz"></div>
+<div id="dialog"></div>
+<div id="dialog2"></div>
