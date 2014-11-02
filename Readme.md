@@ -3,7 +3,7 @@
 
 Project to identify trending items near one's location
 
-==Steps to run
+==Steps to run ==
 <ol>
 <li>install Node.js </li>
 <li>run npm install from root directory</li>
