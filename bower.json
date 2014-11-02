@@ -1,0 +1,22 @@
+{
+  "name": "iTrendz",
+  "version": "1.0.0",
+  "homepage": "https://github.com/vikasmb/iTrendz",
+  "authors": [
+    "Vikas <mallapu2@illinois.edu>"
+  ],
+  "description": "Tool for viewing local trending events",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "selectize": "~0.11.2",
+    "eonasdan-bootstrap-datetimepicker": "~3.1.3"
+  }
+}
