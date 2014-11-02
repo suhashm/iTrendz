@@ -11,3 +11,4 @@ Project to identify trending items near one's location
 <li>In config/auth.js - change callback URL to localhost</li>
 <li>open <a href="http://localhost:8000" target="_blank"> localhost:8000</a> </li>
 </ol>
+
