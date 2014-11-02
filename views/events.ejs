@@ -1,5 +1,8 @@
+<html>
+<!--link rel="stylesheet" href="view/css/jquery.custombox.css"-->
 
 <head>
+
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
     <link href="css/simple-sidebar.css" rel="stylesheet">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
@@ -17,6 +20,17 @@
         });
     </script>
     <!-- <script src="jquery.bpopup.js"></script> -->
+
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> 
+
+    <!--script type="text/javascript" src="/bower_components/jquery/jquery.min.js"></script-->
+ 
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/3.0.0/css/bootstrap-datetimepicker.min.css" />
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/themes/base/jquery-ui.css" />
+    <!-- load bootstrap css -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://online.tableausoftware.com/javascripts/api/tableau_v8.js"></script>
+
 </head>
 
 <style>
@@ -31,6 +45,11 @@
         background-color: #E5E5E5;
     }
 </style>
+  <body>
+   <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js"></script>
+   <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+   <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/3.0.0/js/bootstrap-datetimepicker.min.js"></script>
+
 <script>
     var viz, workbook, activeSheet,a,b,c,d,e,f,g;
 
@@ -127,6 +146,7 @@
 </script>
 <!-- <button type="button" onclick="$('#tableauViz').html(''); initializeViz()" >text</button>  -->
 <!-- <button type="button" onclick="filterSingleValue()" >text</button>  -->
+
 <div class="col-sm-12">
 <!--<div class="col-sm-2">SIDEBAR-->
    <!-- <div id="wrapper" class="toggled">
@@ -174,4 +194,47 @@
 
 </div>
 <div id="dialog" style="display: none"></div>
+
+<div class="col-sm-10">
+<div class="col-sm-2">
+
+      <h3> Create new event</h3>
+      <form role="form">
+
+        <div class="form-group">
+            <label for="eventName">Enter event name</label>
+            <input type="text" class="form-control" id="eventName" placeholder="event name">
+        </div>
+
+        <div class="form-group">
+            <label for="datetimepicker1">Enter event date and time</label>
+            <div class='input-group date' id='datetimepicker1'>
+              <input type='text' class="form-control" />
+                  <span class="input-group-addon">\
+                      <span class="glyphicon glyphicon-calendar">
+                      </span>
+                  </span>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker1').datetimepicker();
+            });
+        </script>
+
+         <div class="form-group">
+            <label for="select-to">Select/enter category</label>
+            <input type="text" class="form-control" id="select-to" placeholder="event name">
+        </div>
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+</div>
+<div id="tableauViz" class="col-sm-10"></div>
+</div>
+<div id="dialog"></div>
+<div id="dialog2"></div>
+<div id="dialog3"></div>
+<!--script src="view/js/jquery.custombox.js"></script-->
+
+</body>
 <div id="dialog2"></div><div id="dialog3"></div>
