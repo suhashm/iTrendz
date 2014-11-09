@@ -12,8 +12,10 @@
     <script src="https://online.tableausoftware.com/javascripts/api/tableau_v8.js"></script>
     <!--script src="/views/vendor/bootstrap/dist/js/bootstrap.js"></script-->
     <script src="https://cdn.jsdelivr.net/bootstrap/3.3.0/js/bootstrap.js"></script>
-    <!--script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/selectize.js/0.11.0/js/standalone/selectize.js"></script-->
+    <!--<script src="https://cdn.jsdelivr.net/bootstrap/3.3.0/js/bootstrap.js"></script>-->
+    <!--<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/selectize.js/0.11.0/js/standalone/selectize.js"></script>-->
     <script src="css/toastr.min.js"></script>
+    <script src="vendor/selectize/dist/js/selectize.js"></script>
 
     <!-- Menu Toggle Script -->
     <script>
@@ -79,7 +81,7 @@
     $(document).ready(function(){
         $(initializeViz);
         $(listenToMarksSelection);
-        toastr.success("Successfully logged in");
+        //toastr.success("Successfully logged in");
         $("#lgOut").on('click', function(){
             toastr.success("Successfully Logged Out !");
            setTimeout(function(){
@@ -156,8 +158,8 @@
 <!--<div class="col-sm-2">SIDEBAR-->
    <!-- <div id="wrapper" class="toggled">
 
-        &lt;!&ndash; Sidebar &ndash;&gt;
-        <div id="sidebar-wrapper">
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper" style="display: none">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
                     <a href="#">
@@ -187,12 +189,12 @@
                 </li>
             </ul>
         </div>
-        &lt;!&ndash; /#sidebar-wrapper &ndash;&gt;
+        <!-- /#sidebar-wrapper -->
 
-        &lt;!&ndash; Page Content &ndash;&gt;
-        &lt;!&ndash;<a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>&ndash;&gt;
+        <!-- Page Content -->
+        <!--<a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>-->
 
-    </div>-->
+    </div>
 <!--</div>-->
 <div id="tableauViz" class="col-sm-10" style="padding-top: 2% "><i class="fa fa-bars fa-lg"></i></div>
 <button id="lgOut" class="col-sm-2 btn btn-default"> <i class="fa fa-sign-out"></i>logout</button>
@@ -238,7 +240,7 @@
         <script type="text/javascript">
             $(function() {
                 //alert("Hello");
-                $('#stwo').selectize({create: true});
+                //$('#stwo').selectize({create: true});
                 /*$('select-to').selectize( 
                     {
                      persist: false,

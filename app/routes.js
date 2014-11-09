@@ -22,13 +22,16 @@ module.exports = function(app, passport) {
     app.get('/guest',function(req, res) {
         res.render('events.ejs');
     });
+    app.get('/intro',function(req, res) {
+        res.render('intro1.ejs');
+    });
 
     app.get('/auth/google', passport.authenticate('google', { scope : ['profile', 'email'] }));
 
     // the callback after google has authenticated the user
     app.get('/auth/google/callback',
         passport.authenticate('google', {
-            successRedirect : '/profile',
+            successRedirect : '/intro',
             failureRedirect : '/'
         }));
 

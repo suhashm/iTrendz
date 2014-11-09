@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+    <title>iTrendz</title>
+    <!--<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> &lt;!&ndash; load bootstrap css &ndash;&gt;-->
+    <link rel="stylesheet" href="./vendor/bootstrap/dist/css/bootstrap.css"> <!-- load bootstrap css -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
+    <link rel="stylesheet" href="./vendor/intro.js/introjs.css"> <!-- load fontawesome -->
+    <link href="css/toastr.css" rel="stylesheet">
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
+    <script type="text/javascript" src="./vendor/selectize/dist/js/selectize.js"></script>
+    <script src="css/toastr.min.js"></script>
+    <script type="text/javascript" src="./vendor/intro.js/intro.js"></script>
+    <script>
+//        introJs().oncomplete(function() {
+//            alert("end of introduction");
+//        });
+$(document).ready(function() {
+    toastr.success("Successfully logged in");
+
+    $("#showIntro").click(function(){
+        introJs().setOption('showBullets', false).start()
+    });
+
+    setTimeout(function(){
+        $("#showIntro").click();
+    }, 800)
+
+    $("#lgOut1").on('click', function(){
+        toastr.success("Successfully Logged Out !");
+        setTimeout(function(){
+            // alert("time out click")
+            window.location.replace("/");
+        }, 1000);
+    });
+});
+    </script>
+    </head>
+<body>
+<!--<h1>Welcome intro1</h1>-->
+<button id="lgOut1" data-step="6" data-intro="Log out" data-position='left' class="pull-right btn btn-default" style="width: 18%"> <i class="fa fa-sign-out"></i>logout</button>
+<div style="width: 50%; margin: 0 auto; padding-top: 2%">
+    <img data-step="1" data-intro="Welcome!" src="images/iheader.png" alt="iheader" style="width: 100%"/><br/>
+    <img data-step="2" data-intro="text input!"  src="images/second.png" alt="second" style="width: 82%"/>
+    <img data-step="3" data-intro="search!" data-position='right' src="images/third.png" alt="third" style="width: 12%"/><br/>
+    <!--<img data-step="4" data-intro="Categories" src="images/fourth.png" alt="fourth" /><br/>-->
+    <!--<img data-step="4" data-intro="Categories" src="images/fourth_1.png" alt="fourth" /><img data-step="5" data-intro="Categories" src="images/fourth_2.png" alt="fourth" />-->
+    <img  src="images/4_1.png" alt="fourth" style="width: 34%"/><img data-step="4" data-intro="Categories" src="images/4_2.png" alt="fourth" style="width: 35%"/><img  src="images/4_3.png" alt="fourth" style="width: 29%"/><br/>
+    <div style="width: 50%; margin: 0 auto">
+        <img data-step="5" data-intro="Trending events!" data-position='left' src="images/5_1.png" alt="events" style="width: 121%"/><br/>
+    </div>
+
+
+</div>
+<!--<a class="btn btn-large btn-success" href="javascript:void(0);" onclick="javascript:introJs().setOption('showBullets', false).start();">Show me how</a>-->
+<!--<a class="btn btn-large btn-success" href="javascript:void(0);" id="showIntro">Show me how</a>-->
+<div style="padding-right: 2%">
+    <button class=" pull-right btn btn-large btn-success" id="showIntro" style="display: none">Show Tour</button>
+    <a href="/guest" data-step="7" data-intro="continue to awesomeness" class=" pull-right btn btn-large btn-danger" id="continue">Continue to our application</a>
+</div>
+</body>
+</html>
