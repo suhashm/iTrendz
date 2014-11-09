@@ -6,10 +6,13 @@
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
     <link href="css/simple-sidebar.css" rel="stylesheet">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/selectize.js/0.11.0/css/selectize.bootstrap3.css" />
     <link href="css/toastr.css" rel="stylesheet">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://online.tableausoftware.com/javascripts/api/tableau_v8.js"></script>
-    <script src="https://cdn.jsdelivr.net/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <!--script src="/views/vendor/bootstrap/dist/js/bootstrap.js"></script-->
+    <script src="https://cdn.jsdelivr.net/bootstrap/3.3.0/js/bootstrap.js"></script>
+    <!--script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/selectize.js/0.11.0/js/standalone/selectize.js"></script-->
     <script src="css/toastr.min.js"></script>
 
     <!-- Menu Toggle Script -->
@@ -30,6 +33,7 @@
     <!-- load bootstrap css -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://online.tableausoftware.com/javascripts/api/tableau_v8.js"></script>
+
     <script type="text/javascript" src="./vendor/selectize/dist/js/selectize.js"></script>
 
 </head>
@@ -225,8 +229,48 @@
 
          <div class="form-group">
             <label for="select-to">Select/enter category</label>
-            <input type="text" class="form-control" id="select-to" placeholder="event name">
+            <select id="stwo">
+                <option value="Techtalk">Techtalk</option>
+                <option value="Winter shopping">Winter shopping</option>
+                <option value="Hackathon">Hackathon</option>
+            </select>
         </div>
+        <script type="text/javascript">
+            $(function() {
+                //alert("Hello");
+                $('#stwo').selectize({create: true});
+                /*$('select-to').selectize( 
+                    {
+                     persist: false,
+                     maxItems: null,
+                     valueField: 'email',
+                     labelField: 'name',
+                     searchField: ['name', 'email'],
+                     options: [
+                        {email: 'brian@thirdroute.com', name: 'Brian Reavis'},
+                        {email: 'nikola@tesla.com', name: 'Nikola Tesla'},
+                        {email: 'someone@gmail.com'}
+                     ],
+                     render: {
+                        item: function(item, escape) {
+                              return '<div>' +
+                              (item.name ? '<span class="name">' + escape(item.name) + '</span>' : '') +
+                              (item.email ? '<span class="email">' + escape(item.email) + '</span>' : '') +
+                              '</div>';
+                        },
+                        option: function(item, escape) {
+                            var label = item.name || item.email;
+                            var caption = item.name ? item.email : null;
+                            return '<div>' +
+                            '<span class="label">' + escape(label) + '</span>' +
+                            (caption ? '<span class="caption">' + escape(caption) + '</span>' : '') +
+                            '</div>';
+                        }
+                     }  
+                    });*/
+
+            });
+        </script>
       <button type="submit" class="btn btn-default">Submit</button>
     </form>
 </div>
