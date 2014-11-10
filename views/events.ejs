@@ -36,7 +36,7 @@
     }
 </style>
   <body>
-  
+
 
 <script>
     var viz, workbook, activeSheet,a,b,c,d,e,f,g;
@@ -72,10 +72,10 @@
         });
         $("#eventbtn").on('click', function(){
             toastr.success("Event successfully created");
-           setTimeout(function(){
-              // alert("time out click")
-               window.location.replace("/");
-           }, 2000);
+//           setTimeout(function(){
+//              // alert("time out click")
+//            //   window.location.replace("/");
+//           }, 2000);
         });
 
     });
@@ -135,15 +135,32 @@
 <!-- <button type="button" onclick="$('#tableauViz').html(''); initializeViz()" >text</button>  -->
 <!-- <button type="button" onclick="filterSingleValue()" >text</button>  -->
 
-<div class="col-sm-12">
+<div class="col-sm-12" style="padding-left: 0%">
+    <!--<div class="pull-left navbar navbar-default navbar-fixed-top canvas-slid" style="left: 300px;">-->
+    <div class="pull-left navbar navbar-default navbar-fixed-top" style="padding-left: 2%">
+        <button type="button" class="navbar-toggle" text="Click" data-toggle="offcanvas" data-recalc="false" data-target=".navmenu" data-canvas=".canvas">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <div style="padding-top: 1%; padding-right: 2%;">
+            <button id="lgOut" class="btn btn-default pull-right"><i class="fa fa-sign-out"></i> log out</button>
+            <!--<button id="lgOut" class="col-sm-2 btn btn-default"> <i class="fa fa-sign-out"></i>logout</button>-->
+         </div>
+    </div>
+    <!--<div class="pull-right">-->
 
+            <!--<button class="btn btn-default ">log out</button>-->
+
+    <!--</div>-->
         <!-- Sidebar -->
 
-    <div class="navmenu navmenu-default navmenu-fixed-left">
+    <div class="navmenu navmenu-default navmenu-fixed-left" style="padding-left: 3%">
       <a class="navmenu-brand" href="#">Event options</a>
        <ul class="nav navmenu-nav">
         <li><a href="#">Create event</a></li>
-          <form role="form">
+          <!--<form role="form">-->
+          <div>
 
         <div class="form-group">
             <label for="eventName">Enter event name</label>
@@ -211,7 +228,10 @@
             });
         </script>
       <button id="eventbtn" type="submit" class="btn btn-default">Submit</button>
-    </form>
+      <!--<button id="eventbtn1"  class="btn btn-danger"> Cancel</button>-->
+              <button class=" btn btn-danger"  data-toggle="offcanvas" data-recalc="false" data-target=".navmenu" data-canvas=".canvas"> Cancel</button>
+    </div>
+    <!--</form>-->
         <li class="divider"></li>
         <li><a href="#">Search event</a></li>
       <!--<ul class="nav navmenu-nav">
@@ -231,13 +251,13 @@
     </div>
 
     <div class="canvas">
-      <div class="navbar navbar-default navbar-fixed-top canvas-slid" style="left: 300px;">
-        <button type="button" class="navbar-toggle" text="Click" data-toggle="offcanvas" data-recalc="false" data-target=".navmenu" data-canvas=".canvas">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-      </div>
+      <!--<div class="navbar navbar-default navbar-fixed-top canvas-slid" style="left: 300px;">-->
+        <!--<button type="button" class="navbar-toggle" text="Click" data-toggle="offcanvas" data-recalc="false" data-target=".navmenu" data-canvas=".canvas">-->
+          <!--<span class="icon-bar"></span>-->
+          <!--<span class="icon-bar"></span>-->
+          <!--<span class="icon-bar"></span>-->
+        <!--</button>-->
+      <!--</div>-->
 
       <div class="container">
         
@@ -254,9 +274,9 @@
 <div id="dialog" style="display: none"></div>
 
 <div class="col-sm-10">
-<div class="col-sm-2">    
-    <button id="lgOut" class="col-sm-2 btn btn-default"> <i class="fa fa-sign-out"></i>logout</button>
-</div>
+<!--<div class="col-sm-2">    -->
+    <!--<button id="lgOut" class="col-sm-2 btn btn-default"> <i class="fa fa-sign-out"></i>logout</button>-->
+<!--</div>-->
 
 <div id="dialog"></div>
 <div id="dialog2"></div>
