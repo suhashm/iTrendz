@@ -8,36 +8,19 @@
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/selectize.js/0.11.0/css/selectize.bootstrap3.css" />
     <link href="css/toastr.css" rel="stylesheet">
+    <link href="vendor/jasny-bootstrap/dist/css/jasny-bootstrap.css" rel="stylesheet">
+    <link href="css/navmenu-reveal.css" rel="stylesheet">
+
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://online.tableausoftware.com/javascripts/api/tableau_v8.js"></script>
-    <!--script src="/views/vendor/bootstrap/dist/js/bootstrap.js"></script-->
     <script src="https://cdn.jsdelivr.net/bootstrap/3.3.0/js/bootstrap.js"></script>
-    <!--<script src="https://cdn.jsdelivr.net/bootstrap/3.3.0/js/bootstrap.js"></script>-->
-    <!--<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/selectize.js/0.11.0/js/standalone/selectize.js"></script>-->
     <script src="css/toastr.min.js"></script>
-    <script src="vendor/selectize/dist/js/selectize.js"></script>
-
-    <!-- Menu Toggle Script -->
-    <script>
-        $("#menu-toggle").click(function(e) {
-            e.preventDefault();
-            $("#wrapper").toggleClass("toggled");
-        });
-    </script>
-    <!-- <script src="jquery.bpopup.js"></script> -->
-
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> 
-
-    <!--script type="text/javascript" src="/bower_components/jquery/jquery.min.js"></script-->
- 
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/3.0.0/css/bootstrap-datetimepicker.min.css" />
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/themes/base/jquery-ui.css" />
-    <!-- load bootstrap css -->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://online.tableausoftware.com/javascripts/api/tableau_v8.js"></script>
-
-    <script type="text/javascript" src="./vendor/selectize/dist/js/selectize.js"></script>
-
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/3.0.0/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="vendor/selectize/dist/js/standalone/selectize.js"></script>
+    <script src="vendor/jasny-bootstrap/dist/js/jasny-bootstrap.js"></script>
 </head>
 
 <style>
@@ -53,9 +36,7 @@
     }
 </style>
   <body>
-   <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js"></script>
-   <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-   <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/3.0.0/js/bootstrap-datetimepicker.min.js"></script>
+  
 
 <script>
     var viz, workbook, activeSheet,a,b,c,d,e,f,g;
@@ -88,13 +69,13 @@
               // alert("time out click")
                window.location.replace("/");
            }, 1000);
-            //var url = "http://stackoverflow.com";
-//            var url = "/";
-//            $(location).attr('href',url);
-
-            /*alert("log out clicked");
-           window.location.replace("/");*/
-
+        });
+        $("#eventbtn").on('click', function(){
+            toastr.success("Event successfully created");
+           setTimeout(function(){
+              // alert("time out click")
+               window.location.replace("/");
+           }, 2000);
         });
 
     });
@@ -155,58 +136,14 @@
 <!-- <button type="button" onclick="filterSingleValue()" >text</button>  -->
 
 <div class="col-sm-12">
-<!--<div class="col-sm-2">SIDEBAR-->
-   <!-- <div id="wrapper" class="toggled">
 
         <!-- Sidebar -->
-        <div id="sidebar-wrapper" style="display: none">
-            <ul class="sidebar-nav">
-                <li class="sidebar-brand">
-                    <a href="#">
-                        Start Bootstrap
-                    </a>
-                </li>
-                <li>
-                    <a href="#">Dashboard</a>
-                </li>
-                <li>
-                    <a href="#">Shortcuts</a>
-                </li>
-                <li>
-                    <a href="#">Overview</a>
-                </li>
-                <li>
-                    <a href="#">Events</a>
-                </li>
-                <li>
-                    <a href="#">About</a>
-                </li>
-                <li>
-                    <a href="#">Services</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
-                </li>
-            </ul>
-        </div>
-        <!-- /#sidebar-wrapper -->
 
-        <!-- Page Content -->
-        <!--<a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>-->
-
-    </div>
-<!--</div>-->
-<div id="tableauViz" class="col-sm-10" style="padding-top: 2% "><i class="fa fa-bars fa-lg"></i></div>
-<button id="lgOut" class="col-sm-2 btn btn-default"> <i class="fa fa-sign-out"></i>logout</button>
-
-</div>
-<div id="dialog" style="display: none"></div>
-
-<div class="col-sm-10">
-<div class="col-sm-2">
-
-      <h3> Create new event</h3>
-      <form role="form">
+    <div class="navmenu navmenu-default navmenu-fixed-left">
+      <a class="navmenu-brand" href="#">Event options</a>
+       <ul class="nav navmenu-nav">
+        <li><a href="#">Create event</a></li>
+          <form role="form">
 
         <div class="form-group">
             <label for="eventName">Enter event name</label>
@@ -240,7 +177,7 @@
         <script type="text/javascript">
             $(function() {
                 //alert("Hello");
-                //$('#stwo').selectize({create: true});
+                $('#stwo').selectize({create: true});
                 /*$('select-to').selectize( 
                     {
                      persist: false,
@@ -273,11 +210,54 @@
 
             });
         </script>
-      <button type="submit" class="btn btn-default">Submit</button>
+      <button id="eventbtn" type="submit" class="btn btn-default">Submit</button>
     </form>
+        <li class="divider"></li>
+        <li><a href="#">Search event</a></li>
+      <!--<ul class="nav navmenu-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+          <ul class="dropdown-menu navmenu-nav">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li class="dropdown-header">Nav header</li>
+            <li><a href="#">Separated link</a></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>-->
+      </ul>
+    </div>
+
+    <div class="canvas">
+      <div class="navbar navbar-default navbar-fixed-top canvas-slid" style="left: 300px;">
+        <button type="button" class="navbar-toggle" text="Click" data-toggle="offcanvas" data-recalc="false" data-target=".navmenu" data-canvas=".canvas">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+
+      <div class="container">
+        
+       <div id="tableauViz" class="col-sm-10"></div>
+       </div>
+      </div>
+    </div>
+
+<div>       
+<!--</div>-->
+<!--div id="tableauViz" class="col-sm-10" style="padding-top: 2% "><i class="fa fa-bars fa-lg"></i></div-->
+
 </div>
-<div id="tableauViz" class="col-sm-10"></div>
+<div id="dialog" style="display: none"></div>
+
+<div class="col-sm-10">
+<div class="col-sm-2">    
+    <button id="lgOut" class="col-sm-2 btn btn-default"> <i class="fa fa-sign-out"></i>logout</button>
 </div>
+
 <div id="dialog"></div>
 <div id="dialog2"></div>
 <div id="dialog3"></div>
