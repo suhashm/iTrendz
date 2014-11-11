@@ -20,7 +20,7 @@
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js"></script>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/3.0.0/js/bootstrap-datetimepicker.min.js"></script>
     <script src="vendor/selectize/dist/js/standalone/selectize.js"></script>
-    <script src="vendor/jasny-bootstrap/dist/js/jasny-bootstrap.js"></script>
+    <script src="js/jquery.custombox.js"></script>
 </head>
 
 <style>
@@ -70,6 +70,15 @@
                window.location.replace("/");
            }, 1000);
         });
+//
+//        $('#friendModal').on('click', function ( e ) {
+//            $.fn.custombox( this, {
+//                effect: 'fadein',
+//                url: 'index.html'
+//            });
+//            e.preventDefault();
+//        });
+
         $("#eventbtn").on('click', function(){
             toastr.success("Event successfully created");
 //           setTimeout(function(){
@@ -122,15 +131,28 @@
             html.push("</ul>");
         }
 
-        var dialog = $("#dialog");
-        dialog.html(html.join(""));
-        dialog.dialog("open");
+//        var dialog = $("#dialog");
+//        dialog.html(html.join(""));
+//        dialog.dialog("open");
+        console.log('test');
+        $.fn.custombox( this, {
+//                effect: 'fadein',
+//                url: 'Friend_Photo_Slider.html'
+            overlay: false,
+            effect: 'fadein'
+        });
+
 
     }
 
     function removeMarksSelectionEventListener() {
         viz.removeEventListener(tableauSoftware.TableauEventName.MARKS_SELECTION, onMarksSelection);
     }
+
+
+
+
+
 </script>
 <!-- <button type="button" onclick="$('#tableauViz').html(''); initializeViz()" >text</button>  -->
 <!-- <button type="button" onclick="filterSingleValue()" >text</button>  -->
@@ -149,7 +171,7 @@
          </div>
     </div>
     <!--<div class="pull-right">-->
-
+c
             <!--<button class="btn btn-default ">log out</button>-->
 
     <!--</div>-->
