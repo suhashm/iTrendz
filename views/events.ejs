@@ -72,10 +72,11 @@
         });
         $("#eventbtn").on('click', function(){
             toastr.success("Event successfully created");
-//           setTimeout(function(){
-//              // alert("time out click")
-//            //   window.location.replace("/");
-//           }, 2000);
+           setTimeout(function(){
+              // alert("time out click")
+            //   window.location.replace("/");
+               $("#cancelBtn").click();
+           }, 2000);
         });
 
     });
@@ -157,8 +158,9 @@
 
     <div class="navmenu navmenu-default navmenu-fixed-left" style="padding-left: 3%">
       <a class="navmenu-brand" href="#">Event options</a>
-       <ul class="nav navmenu-nav">
-        <li><a href="#">Create event</a></li>
+       <ul class="nav navmenu-nav" style="padding-right: 5%;">
+        <!--<li><a href="#">Create event</a></li>-->
+        <li><h3>Create event</h3></li>
           <!--<form role="form">-->
           <div>
 
@@ -167,11 +169,11 @@
             <input type="text" class="form-control" id="eventName" placeholder="event name">
         </div>
 
-        <div class="form-group">
+        <div class="form-group" >
             <label for="datetimepicker1">Enter event date and time</label>
             <div class='input-group date' id='datetimepicker1'>
-              <input type='text' class="form-control" />
-                  <span class="input-group-addon">\
+              <input type='text' class="form-control" placeholder="Select Date and Time"/>
+                  <span class="input-group-addon">
                       <span class="glyphicon glyphicon-calendar">
                       </span>
                   </span>
@@ -229,7 +231,7 @@
         </script>
       <button id="eventbtn" type="submit" class="btn btn-default">Submit</button>
       <!--<button id="eventbtn1"  class="btn btn-danger"> Cancel</button>-->
-              <button class=" btn btn-danger"  data-toggle="offcanvas" data-recalc="false" data-target=".navmenu" data-canvas=".canvas"> Cancel</button>
+              <button id="cancelBtn" class=" btn btn-danger"  data-toggle="offcanvas" data-recalc="false" data-target=".navmenu" data-canvas=".canvas"> Cancel</button>
     </div>
     <!--</form>-->
         <li class="divider"></li>

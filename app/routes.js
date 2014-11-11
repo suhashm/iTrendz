@@ -23,7 +23,7 @@ module.exports = function(app, passport) {
         res.render('events.ejs');
     });
     app.get('/intro',function(req, res) {
-        res.render('intro1.ejs');
+        res.render('intro.ejs');
     });
 
     app.get('/auth/google', passport.authenticate('google', { scope : ['profile', 'email'] }));

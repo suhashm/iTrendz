@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!--<link rel="shortcut icon" href="../../assets/ico/favicon.png">-->
+
+    <title>Off Canvas Reveal Menu Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/jasny-bootstrap/dist/css/jasny-bootstrap.css" rel="stylesheet">
+    <!--<link href="css/navmenu-reveal.css" rel="stylesheet">-->
+    <link href="css/toastr.css" rel="stylesheet">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!--<script src="https://online.tableausoftware.com/javascripts/api/tableau_v8.js"></script>-->
+    <script src="https://cdn.jsdelivr.net/bootstrap/3.3.0/js/bootstrap.js"></script>
+    <script src="vendor/jasny-bootstrap/dist/js/jasny-bootstrap.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/3.0.0/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="vendor/selectize/dist/js/standalone/selectize.js"></script>
+    <script src="css/toastr.min.js"></script>
+    <script type="text/javascript" src="./vendor/intro.js/intro.js"></script>
+    <!-- Custom styles for this template -->
+    <!--<link href="navmenu-reveal.css" rel="stylesheet">-->
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><!--<script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script>-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <!--<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>-->
+    <!--<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>-->
+    <script>
+        //        introJs().oncomplete(function() {
+        //            alert("end of introduction");
+        //        });
+        $(document).ready(function() {
+            toastr.success("Successfully logged in");
+//            $("#bclick").click();
+            $("#showIntro").click(function(){
+                console.log("tourc clicked");
+                introJs().setOption('showBullets', false).start()
+            });
+
+            setTimeout(function(){
+                $("#showIntro").click();
+            }, 800);
+
+            $("#lgOut1").on('click', function(){
+                toastr.success("Successfully Logged Out !");
+                setTimeout(function(){
+                    // alert("time out click")
+                    window.location.replace("/");
+                }, 1000);
+            });
+        });
+    </script>
+</head>
+
+<body>
+<div class="navmenu navmenu-default navmenu-fixed-left" style="width: 225px;">
+    <a class="navmenu-brand" href="#">iTrendz</a>
+    <!--<ul class="nav navmenu-nav">-->
+        <!--<li><a href="../navmenu/">Slide in</a></li>-->
+        <!--<li><a href="../navmenu-push/">Push</a></li>-->
+        <!--<li class="active"><a href="./">Reveal</a></li>-->
+        <!--<li><a href="../navbar-offcanvas/">Off canvas navbar</a></li>-->
+    <!--</ul>-->
+    <!--<ul class="nav navmenu-nav">-->
+        <!--<li><a href="#">Link</a></li>-->
+        <!--<li><a href="#">Link</a></li>-->
+        <!--<li><a href="#">Link</a></li>-->
+        <!--<li class="dropdown">-->
+            <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>-->
+            <!--<ul class="dropdown-menu navmenu-nav">-->
+                <!--<li><a href="#">Action</a></li>-->
+                <!--<li><a href="#">Another action</a></li>-->
+                <!--<li><a href="#">Something else here</a></li>-->
+                <!--<li class="divider"></li>-->
+                <!--<li class="dropdown-header">Nav header</li>-->
+                <!--<li><a href="#">Separated link</a></li>-->
+                <!--<li><a href="#">One more separated link</a></li>-->
+            <!--</ul>-->
+        <!--</li>-->
+    <!--</ul>-->
+    <ul class="nav navmenu-nav" style="padding-left: 5%;">
+        <!--<li><a href="#">Create event</a></li>-->
+        <li><h3>Create event</h3></li>
+        <!--<form role="form">-->
+        <div>
+
+            <div class="form-group">
+                <label for="eventName">Enter event name</label>
+                <input type="text" class="form-control" id="eventName" placeholder="event name">
+            </div>
+
+            <div class="form-group" >
+                <label for="datetimepicker1">Enter event date and time</label>
+                <div class='input-group date' id='datetimepicker1'>
+                    <input type='text' class="form-control" />
+                  <span class="input-group-addon">
+                      <span class="glyphicon glyphicon-calendar">
+                      </span>
+                  </span>
+                </div>
+            </div>
+            <script type="text/javascript">
+                $(function () {
+                    $('#datetimepicker1').datetimepicker();
+                });
+            </script>
+
+            <div class="form-group">
+                <label for="select-to">Select/enter category</label>
+                <select id="stwo">
+                    <option value="Techtalk">Techtalk</option>
+                    <option value="Winter shopping">Winter shopping</option>
+                    <option value="Hackathon">Hackathon</option>
+                </select>
+            </div>
+            <script type="text/javascript">
+                $(function() {
+                   // $('#stwo').selectize({create: true})
+                });
+            </script>
+            <button id="eventbtn" type="submit" class="btn btn-default">Submit</button>
+            <!--<button id="eventbtn1"  class="btn btn-danger"> Cancel</button>-->
+            <button id="cancelBtn" class=" btn btn-danger"  data-toggle="offcanvas" data-recalc="false" data-target=".navmenu" data-canvas=".canvas"> Cancel</button>
+        </div>
+        <!--</form>-->
+        <li class="divider"></li>
+        <li><a href="#">Search event</a></li>
+
+    </ul>
+</div>
+
+<div class="canvas">
+    <!--<div class="navbar navbar-default navbar-fixed-top" >-->
+        <!--<div style="padding-left: 2%">-->
+            <!--&lt;!&ndash;<button id="bclick" type="button" class="navbar-toggle" data-toggle="offcanvas" data-recalc="false" data-target=".navmenu" data-canvas=".canvas">&ndash;&gt;-->
+            <!--<button id="bclick" type="button" class="navbar-toggle" data-toggle="offcanvas" data-recalc="true" data-target=".navmenu" data-canvas=".canvas">-->
+                <!--<span class="icon-bar"></span>-->
+                <!--<span class="icon-bar"></span>-->
+                <!--<span class="icon-bar"></span>-->
+            <!--</button>-->
+        <!--</div>-->
+        <!--<div style="padding-top: 1%;padding-right: 30%;">-->
+        <!--<button id="lgOut1" data-step="6" data-intro="Log out" data-position='left' class="pull-right btn btn-default" style="width: 18%"> <i class="fa fa-sign-out"></i>logout</button>-->
+        <!--</div>-->
+    <!--</div>-->
+
+    <!--<div class="container">-->
+        <!--<div class="page-header">-->
+            <!--<h1>Off Canvas Reveal Menu Template</h1>-->
+        <!--</div>-->
+        <!--<p class="lead">This example demonstrates the use of the offcanvas plugin with a reveal effect.</p>-->
+        <!--<p>On the contrary of the push effect, the menu doesn't move with the canvas.</p>-->
+        <!--<p>You get the reveal effect by wrapping the content in a div and setting the <code>canvas</code> option to target that div.</p>-->
+        <!--<p>Note that in this example, the navmenu doesn't have the <code>offcanvas</code> class, but is placed under the canvas by setting the <code>z-index</code>.</p>-->
+        <!--<p>Also take a look at the examples for a navmenu with <a href="../navmenu">slide in effect</a> and <a href="../navmenu-push">push effect</a>.</p>-->
+    <!--</div>-->
+    <div class="container" style="padding-left: 19%;">
+
+        <!--<div style="width: 50%; margin: 0 auto; padding-top: 2%">-->
+        <div style="width: 62%;">
+            <img data-step="1" data-intro="Welcome!" data-position='right' src="images/iheader.png" alt="iheader" style="width: 100%"/><br/>
+            <img data-step="2" data-intro="text input!"  src="images/second.png" alt="second" style="width: 82%"/>
+            <img data-step="3" data-intro="search!" data-position='right' src="images/third.png" alt="third" style="width: 12%"/><br/>
+            <!--<img data-step="4" data-intro="Categories" src="images/fourth.png" alt="fourth" /><br/>-->
+            <!--<img data-step="4" data-intro="Categories" src="images/fourth_1.png" alt="fourth" /><img data-step="5" data-intro="Categories" src="images/fourth_2.png" alt="fourth" />-->
+            <img  src="images/4_1.png" alt="fourth" style="width: 34%"/><img data-step="4" data-intro="Categories" src="images/4_2.png" alt="fourth" style="width: 35%"/><img  src="images/4_3.png" alt="fourth" style="width: 29%"/><br/>
+            <div style="width: 50%; margin: 0 auto">
+                <img data-step="5" data-intro="Trending events!" data-position='left' src="images/5_1.png" alt="events" style="width: 121%"/><br/>
+            </div>
+
+
+        </div>
+    </div><!-- /.container -->
+    <div style="padding-right: 27%">
+        <button class=" pull-right btn btn-large btn-success" id="showIntro" >Show Tour</button>
+        <a href="/guest" data-step="7" data-intro="continue to awesomeness" class=" pull-right btn btn-large btn-danger" id="continue">Continue to our application</a>
+        <!--<button>OK</button>-->
+    </div>
+</div>
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<!--<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>-->
+<!--<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>-->
+<!--<script src="../../dist/js/jasny-bootstrap.min.js"></script>-->
+</body>
+</html>
