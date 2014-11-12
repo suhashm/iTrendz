@@ -34,6 +34,9 @@
     body{
         background-color: #E5E5E5;
     }
+    .selectize-control{
+      padding-bottom: 3px;
+    }
 </style>
   <body>
 
@@ -123,9 +126,10 @@
             html.push("</ul>");
         }
 
-        var dialog = $("#dialog");
-        dialog.html(html.join(""));
-        dialog.dialog("open");
+        // var dialog = $("#dialog");
+        // dialog.html(html.join(""));
+        // dialog.dialog("open");
+        $('#myModal').modal()
 
     }
 
@@ -155,24 +159,27 @@
 
     <!--</div>-->
         <!-- Sidebar -->
+        <!-- Button trigger modal -->
+
 
     <div class="navmenu navmenu-default navmenu-fixed-left" style="padding-left: 3%">
       <a class="navmenu-brand" href="#">Event options</a>
        <ul class="nav navmenu-nav" style="padding-right: 5%;">
         <!--<li><a href="#">Create event</a></li>-->
-        <li><h3>Create event</h3></li>
+        <!-- <li><h5>Create event</h5></li> -->
+        <li><h5><i><font color='maroon'><b>Create a new event</b></font></i></h5></li>
           <!--<form role="form">-->
           <div>
 
-        <div class="form-group">
-            <label for="eventName">Enter event name</label>
-            <input type="text" class="form-control" id="eventName" placeholder="event name">
+        <div class="form-group" style="margin-bottom: 7px;">
+            <!-- <label for="eventName">Enter event name</label> -->
+            <input type="text" class="form-control input-sm" id="eventName" placeholder="event name">
         </div>
 
-        <div class="form-group" >
-            <label for="datetimepicker1">Enter event date and time</label>
+        <div class="form-group" style="margin-bottom: 7px;">
+            <!-- <label for="datetimepicker1">Enter event date and time</label> -->
             <div class='input-group date' id='datetimepicker1'>
-              <input type='text' class="form-control" placeholder="Select Date and Time"/>
+              <input type='text' class="form-control input-sm" placeholder="Select Date and Time"/>
                   <span class="input-group-addon">
                       <span class="glyphicon glyphicon-calendar">
                       </span>
@@ -185,12 +192,14 @@
             });
         </script>
 
-         <div class="form-group">
-            <label for="select-to">Select/enter category</label>
-            <select id="stwo">
+         <div class="form-group" style="padding-left: 22%">
+            <!-- <label for="select-to" style="margin-top: 13px;">Select category</label> -->
+            <select id="stwo7">
+                <option value="Techtalk1">Select category</option>
                 <option value="Techtalk">Techtalk</option>
                 <option value="Winter shopping">Winter shopping</option>
                 <option value="Hackathon">Hackathon</option>
+                
             </select>
         </div>
         <script type="text/javascript">
@@ -229,17 +238,18 @@
 
             });
         </script>
-      <button id="eventbtn" type="submit" class="btn btn-default">Submit</button>
+        <div style="padding-left: 22%;">
+      <button id="eventbtn" type="submit" class="btn btn-sm btn-success">Submit</button>
       <!--<button id="eventbtn1"  class="btn btn-danger"> Cancel</button>-->
-              <button id="cancelBtn" class=" btn btn-danger"  data-toggle="offcanvas" data-recalc="false" data-target=".navmenu" data-canvas=".canvas"> Cancel</button>
-  
+              <button id="cancelBtn" class=" btn btn-sm btn-danger"  data-toggle="offcanvas" data-recalc="false" data-target=".navmenu" data-canvas=".canvas"> Cancel</button>
+      </div>
     <!--</form>-->
         <li class="divider"></li>
-        <li><h3>Search for events</h3></li>
+        <li><h5 style="border-top: 0px solid;padding-top: 19px;"><i><font color='maroon'>Search for events</font></i></h5></li>
         <div class="form-group" >
-            <label for="datetimepicker3"> Event start time</label>
+           <!--  <label for="datetimepicker3"> Event start time</label> -->
             <div class='input-group date' id='datetimepicker2'>
-              <input type='text' class="form-control" placeholder="Select Date and Time"/>
+              <input type='text' class="form-control input-sm" placeholder="Select Start Date and Time"/>
                   <span class="input-group-addon">
                       <span class="glyphicon glyphicon-calendar">
                       </span>
@@ -247,9 +257,9 @@
             </div>
         </div>
         <div class="form-group" >
-            <label for="datetimepicker3"> Event end time</label>
+           <!--  <label for="datetimepicker3"> Event end time</label> -->
             <div class='input-group date' id='datetimepicker3'>
-              <input type='text' class="form-control" placeholder="Select Date and Time"/>
+              <input type='text' class="form-control input-sm" placeholder="Select End Date and Time"/>
                   <span class="input-group-addon">
                       <span class="glyphicon glyphicon-calendar">
                       </span>
@@ -262,9 +272,9 @@
                 $('#datetimepicker3').datetimepicker();
             });
         </script>
-        <h4><center>OR</center></h4>
+        <!-- <h4><center>OR</center></h4> -->
 
-      <ul class="nav navmenu-nav">
+      <!-- <ul class="nav navmenu-nav">
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">By category <b class="caret"></b></a>
           <ul class="dropdown-menu navmenu-nav">
@@ -273,12 +283,27 @@
             <li><a href="#">Hackathon</a></li>
           </ul>
         </li>
-      </ul>
+      </ul> -->
+      <div class="form-group" style="padding-left: 22%;">
+            <!-- <label for="select-to" style="margin-top: 13px;">Select category</label> -->
+            <select id="stwo2">
+                <option value="Techtalk1">Select category</option>
+                <option value="Techtalk">Techtalk</option>
+                <option value="Winter shopping">Winter shopping</option>
+                <option value="Hackathon">Hackathon</option>
+                <option value="Hackatho2n">Sports</option>
+                <option value="Hackathon2">Fun Fest</option>
+                <option value="Hackatho4n">News</option>
+                <option value="Hackathon4">Illini Tech</option> 
+            </select>
+        </div>
     </div>
 
-    <button id="eventbtn" type="submit" class="btn btn-default">Search</button>
+    <div style="padding-left: 22%;">
+    <button id="eventbtn" type="submit" class="btn btn-sm btn-success">Search</button>
     <!--<button id="eventbtn1"  class="btn btn-danger"> Cancel</button>-->
-    <button id="cancelBtn" class=" btn btn-danger"  data-toggle="offcanvas" data-recalc="false" data-target=".navmenu" data-canvas=".canvas">Cancel</button>
+    <button id="cancelBtn" class=" btn btn-sm btn-danger"  data-toggle="offcanvas" data-recalc="false" data-target=".navmenu" data-canvas=".canvas">Cancel</button>
+  </div>
     </div> 
     <div class="canvas">
       <!--<div class="navbar navbar-default navbar-fixed-top canvas-slid" style="left: 300px;">-->
@@ -290,7 +315,7 @@
       <!--</div>-->
 
       <div class="container">
-        
+      
        <div id="tableauViz" class="col-sm-10"></div>
        </div>
       </div>
@@ -302,7 +327,28 @@
 
 </div>
 <div id="dialog" style="display: none"></div>
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Launch demo modal
+</button>
 
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title text-center" id="myModalLabel">Check out your friends going to this event</h4>
+      </div>
+      <div class="modal-body123123">
+         <iframe src="fpic.html" style="width:100%"/>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 <div class="col-sm-10">
 <!--<div class="col-sm-2">    -->
     <!--<button id="lgOut" class="col-sm-2 btn btn-default"> <i class="fa fa-sign-out"></i>logout</button>-->
