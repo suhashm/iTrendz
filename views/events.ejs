@@ -232,26 +232,54 @@
       <button id="eventbtn" type="submit" class="btn btn-default">Submit</button>
       <!--<button id="eventbtn1"  class="btn btn-danger"> Cancel</button>-->
               <button id="cancelBtn" class=" btn btn-danger"  data-toggle="offcanvas" data-recalc="false" data-target=".navmenu" data-canvas=".canvas"> Cancel</button>
-    </div>
+  
     <!--</form>-->
         <li class="divider"></li>
-        <li><a href="#">Search event</a></li>
-      <!--<ul class="nav navmenu-nav">
+        <li><h3>Search for events</h3></li>
+        <div class="form-group" >
+            <label for="datetimepicker3"> Event start time</label>
+            <div class='input-group date' id='datetimepicker2'>
+              <input type='text' class="form-control" placeholder="Select Date and Time"/>
+                  <span class="input-group-addon">
+                      <span class="glyphicon glyphicon-calendar">
+                      </span>
+                  </span>
+            </div>
+        </div>
+        <div class="form-group" >
+            <label for="datetimepicker3"> Event end time</label>
+            <div class='input-group date' id='datetimepicker3'>
+              <input type='text' class="form-control" placeholder="Select Date and Time"/>
+                  <span class="input-group-addon">
+                      <span class="glyphicon glyphicon-calendar">
+                      </span>
+                  </span>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker2').datetimepicker();
+                $('#datetimepicker3').datetimepicker();
+            });
+        </script>
+        <h4><center>OR</center></h4>
+
+      <ul class="nav navmenu-nav">
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">By category <b class="caret"></b></a>
           <ul class="dropdown-menu navmenu-nav">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="divider"></li>
-            <li class="dropdown-header">Nav header</li>
-            <li><a href="#">Separated link</a></li>
-            <li><a href="#">One more separated link</a></li>
+            <li><a href="#">Techtalk</a></li>
+            <li><a href="#">Winter shopping</a></li>
+            <li><a href="#">Hackathon</a></li>
           </ul>
-        </li>-->
+        </li>
       </ul>
     </div>
 
+    <button id="eventbtn" type="submit" class="btn btn-default">Search</button>
+    <!--<button id="eventbtn1"  class="btn btn-danger"> Cancel</button>-->
+    <button id="cancelBtn" class=" btn btn-danger"  data-toggle="offcanvas" data-recalc="false" data-target=".navmenu" data-canvas=".canvas">Cancel</button>
+    </div> 
     <div class="canvas">
       <!--<div class="navbar navbar-default navbar-fixed-top canvas-slid" style="left: 300px;">-->
         <!--<button type="button" class="navbar-toggle" text="Click" data-toggle="offcanvas" data-recalc="false" data-target=".navmenu" data-canvas=".canvas">-->
