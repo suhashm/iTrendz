@@ -28,7 +28,7 @@
 
             setTimeout(function(){
                 $("#showIntro").click();
-                $(".input-group-addon").click();
+              //  $(".input-group-addon").click();
             }, 800);
 
             $("#lgOut1").on('click', function(){
@@ -42,81 +42,28 @@
     </script>
 </head>
 <body>
-<!--<h1>Welcome intro1</h1>-->
-<!--<button id="lgOut1" data-step="6" data-intro="Log out" data-position='left' class="pull-right btn btn-default" style="width: 18%"> <i class="fa fa-sign-out"></i>logout</button>-->
-<!--<div class="navmenu navmenu-default navmenu-fixed-left" style="width: 225px;">-->
-    <!--<a class="navmenu-brand" href="#">iTrendz</a>-->
-    <!--<ul class="nav navmenu-nav" style="padding-left: 5%;">-->
-        <!--&lt;!&ndash;<li><a href="#">Create event</a></li>&ndash;&gt;-->
-        <!--<li><h3>Create event</h3></li>-->
-        <!--&lt;!&ndash;<form role="form">&ndash;&gt;-->
-        <!--<div>-->
-
-            <!--<div class="form-group">-->
-                <!--<label for="eventName">Enter event name</label>-->
-                <!--<input type="text" class="form-control" id="eventName" placeholder="event name">-->
-            <!--</div>-->
-
-            <!--<div class="form-group" >-->
-                <!--<label for="datetimepicker1">Enter event date and time</label>-->
-                <!--<div class='input-group date' id='datetimepicker1'>-->
-                    <!--<input type='text' class="form-control" />-->
-                  <!--<span class="input-group-addon">-->
-                      <!--<span class="glyphicon glyphicon-calendar">-->
-                      <!--</span>-->
-                  <!--</span>-->
-                <!--</div>-->
-            <!--</div>-->
-            <!--<script type="text/javascript">-->
-                <!--$(function () {-->
-                    <!--$('#datetimepicker1').datetimepicker();-->
-                <!--});-->
-            <!--</script>-->
-
-            <!--<div class="form-group">-->
-                <!--<label for="select-to">Select/enter category</label>-->
-                <!--<select id="stwo">-->
-                    <!--<option value="Techtalk">Techtalk</option>-->
-                    <!--<option value="Winter shopping">Winter shopping</option>-->
-                    <!--<option value="Hackathon">Hackathon</option>-->
-                <!--</select>-->
-            <!--</div>-->
-            <!--<script type="text/javascript">-->
-                <!--$(function() {-->
-                    <!--// $('#stwo').selectize({create: true})-->
-                <!--});-->
-            <!--</script>-->
-            <!--<button id="eventbtn" type="submit" class="btn btn-default">Submit</button>-->
-            <!--&lt;!&ndash;<button id="eventbtn1"  class="btn btn-danger"> Cancel</button>&ndash;&gt;-->
-            <!--<button id="cancelBtn" class=" btn btn-danger"  data-toggle="offcanvas" data-recalc="false" data-target=".navmenu" data-canvas=".canvas"> Cancel</button>-->
-        <!--</div>-->
-        <!--&lt;!&ndash;</form>&ndash;&gt;-->
-        <!--<li class="divider"></li>-->
-        <!--<li><a href="#">Search event</a></li>-->
-
-    <!--</ul>-->
-<!--</div>-->
 <!--<div style="width: 50%; margin: 0 auto; padding-top: 2%">-->
 <div style="padding-top: 2%">
-    <div class="col-sm-3 navmenu navmenu-default navmenu-fixed-left" style="width: 225px; background-color: #F8F8F8;">
-        <!--<a class="navmenu-brand" href="#">iTrendz</a>-->
-        <ul class="nav navmenu-nav" style="padding-left: 5%;">
+    <div class="col-sm-3 navmenu navmenu-default navmenu-fixed-left" style="width: 285px; background-color: #F8F8F8;">
+
+        <ul class="nav navmenu-nav" style="padding-right: 5%;padding-top: 12%;">
             <!--<li><a href="#">Create event</a></li>-->
-            <li><h3 data-step="7" data-intro="swipe to open sidebar" data-position='right' >Create event</h3></li>
+            <!-- <li><h5>Create event</h5></li> -->
+            <li><h5 data-step="6" data-intro="Easy to use sidebar for Creating events" data-position='right'><i><font color='maroon'><b>Create a new event</b></font></i></h5></li>
             <!--<form role="form">-->
             <div>
 
-                <div class="form-group">
-                    <label for="eventName">Enter event name</label>
-                    <input type="text" data-step="8" data-intro=" Enter Event name!" data-position='right'  class="form-control" id="eventName" placeholder="event name">
+                <div class="form-group" style="margin-bottom: 7px;">
+                    <!-- <label for="eventName">Enter event name</label> -->
+                    <input type="text" class="form-control input-sm" id="eventName" placeholder="event name" data-step="7" data-intro="Name of event to create" data-position='right'>
                 </div>
 
-                <div class="form-group" >
-                    <label for="datetimepicker1">Enter event date and time</label>
+                <div class="form-group" style="margin-bottom: 7px;">
+                    <!-- <label for="datetimepicker1">Enter event date and time</label> -->
                     <div class='input-group date' id='datetimepicker1'>
-                        <input type='text' class="form-control" placeholder="Select Date"  />
-                  <span class="input-group-addon">
-                      <span class="glyphicon glyphicon-calendar" data-step="9" data-intro="Select Date and Time!" data-position='right'>
+                        <input type='text' class="form-control input-sm" placeholder="Select Date and Time" id="eventVal"/>
+                  <span class="input-group-addon" data-step="8" data-intro="Use DateTime picker for date and time" data-position='right'>
+                      <span class="glyphicon glyphicon-calendar">
                       </span>
                   </span>
                     </div>
@@ -127,38 +74,89 @@
                     });
                 </script>
 
-                <div class="form-group">
-                    <label for="select-to">Select/enter category</label>
-                    <select id="stwo" data-step="10" data-intro="Select Category for event" data-position='right' >
+                <div class="form-group" style="padding-left: 22%">
+                    <!-- <label for="select-to" style="margin-top: 13px;">Select category</label> -->
+                    <select id="stwo7" data-step="9" data-intro="Checkout different categories for an event" data-position='right'>
+                        <option value="Techtalk1">Select category</option>
                         <option value="Techtalk">Techtalk</option>
                         <option value="Winter shopping">Winter shopping</option>
                         <option value="Hackathon">Hackathon</option>
+
                     </select>
                 </div>
                 <script type="text/javascript">
                     $(function() {
-                        // $('#stwo').selectize({create: true})
+                        //alert("Hello");
+                        $('#stwo').selectize({create: true});
+
                     });
                 </script>
-                <button id="eventbtn" type="submit" class="btn btn-default" data-step="11" data-intro="Click to create an event!" data-position='right' >Submit</button>
-                <!--<button id="eventbtn1"  class="btn btn-danger"> Cancel</button>-->
-                <button id="cancelBtn" class=" btn btn-danger"  data-toggle="offcanvas" data-recalc="false" data-target=".navmenu" data-canvas=".canvas"> Cancel</button>
-            </div>
-            <!--</form>-->
-            <li class="divider"></li>
-            <li><a href="#">Search event</a></li>
+                <div style="padding-left: 22%;">
+                    <button id="eventbtn" type="submit" class="btn btn-sm btn-success" data-step="10" data-intro="Just a click to Create an Event!" data-position='right'>Submit</button>
+                    <!--<button id="eventbtn1"  class="btn btn-danger"> Cancel</button>-->
+                    <button id="cancelBtn" class=" btn btn-sm btn-danger"  data-toggle="offcanvas" data-recalc="false" data-target=".navmenu" data-canvas=".canvas"> Cancel</button>
+                </div>
+                <!--</form>-->
+                <li class="divider"></li>
+                <li><h5 style="border-top: 0px solid;padding-top: 17%;"><i><font color='maroon'><b>Search for events</b></font></i></h5></li>
+                <div class="form-group" >
+                    <!--  <label for="datetimepicker3"> Event start time</label> -->
+                    <div class='input-group date' id='datetimepicker2'>
+                        <input type='text' class="form-control input-sm" placeholder="Select Start Date and Time" id="sd1"/>
+                  <span class="input-group-addon">
+                      <span class="glyphicon glyphicon-calendar">
+                      </span>
+                  </span>
+                    </div>
+                </div>
+                <div class="form-group" >
+                    <!--  <label for="datetimepicker3"> Event end time</label> -->
+                    <div class='input-group date' id='datetimepicker3'>
+                        <input type='text' class="form-control input-sm" placeholder="Select End Date and Time" id="sd2"/>
+                  <span class="input-group-addon">
+                      <span class="glyphicon glyphicon-calendar">
+                      </span>
+                  </span>
+                    </div>
+                </div>
+                <script type="text/javascript">
+                    $(function () {
+                        $('#datetimepicker2').datetimepicker();
+                        $('#datetimepicker3').datetimepicker();
+                    });
+                </script>
 
+                <div class="form-group" style="padding-left: 22%;">
+                    <!-- <label for="select-to" style="margin-top: 13px;">Select category</label> -->
+                    <select id="stwo2">
+                        <option value="Techtalk1">Select category</option>
+                        <option value="Techtalk">Techtalk</option>
+                        <option value="Winter shopping">Winter shopping</option>
+                        <option value="Hackathon">Hackathon</option>
+                        <option value="Hackatho2n">Sports</option>
+                        <option value="Hackathon2">Fun Fest</option>
+                        <option value="Hackatho4n">News</option>
+                        <option value="Hackathon4">Illini Tech</option>
+                    </select>
+                </div>
+            </div>
+
+            <div style="padding-left: 22%; padding-bottom: 52%">
+                <button id="eventbtn1" type="submit" class="btn btn-sm btn-success" data-step="11" data-intro="Search for specific event based on Date range or category" data-position='right'>Search</button>
+                <!--<button id="eventbtn1"  class="btn btn-danger"> Cancel</button>-->
+                <button id="cancelBtn1" class=" btn btn-sm btn-danger"  data-toggle="offcanvas" data-recalc="false" data-target=".navmenu" data-canvas=".canvas">Cancel</button>
+            </div>
         </ul>
     </div>
     <div class="col-sm-9" style="width: 50%;">
-        <img data-step="1" data-intro="Welcome!" src="images/iheader.png" alt="iheader" style="width: 100%"/><br/>
-        <img data-step="2" data-intro="text input!"  src="images/second.png" alt="second" style="width: 82%"/>
-        <img data-step="3" data-intro="search!" data-position='right' src="images/third.png" alt="third" style="width: 12%"/><br/>
+        <img data-step="1" data-intro="Welcome to iTrendz!" src="images/iheader.png" alt="iheader" style="width: 100%"/><br/>
+        <img data-step="2" data-intro="Feel free to Search for events"  src="images/second.png" alt="second" style="width: 82%"/>
+        <img data-step="3" data-intro="search is just a click away :)" data-position='right' src="images/third.png" alt="third" style="width: 12%"/><br/>
         <!--<img data-step="4" data-intro="Categories" src="images/fourth.png" alt="fourth" /><br/>-->
         <!--<img data-step="4" data-intro="Categories" src="images/fourth_1.png" alt="fourth" /><img data-step="5" data-intro="Categories" src="images/fourth_2.png" alt="fourth" />-->
-        <img  src="images/4_1.png" alt="fourth" style="width: 34%"/><img data-step="4" data-intro="Categories" src="images/4_2.png" alt="fourth" style="width: 35%"/><img  src="images/4_3.png" alt="fourth" style="width: 29%"/><br/>
+        <img  src="images/4_1.png" alt="fourth" style="width: 34%"/><img data-step="4" data-intro="Top Trending Categories" src="images/4_2.png" alt="fourth" style="width: 35%"/><img  src="images/4_3.png" alt="fourth" style="width: 29%"/><br/>
         <div style="width: 50%; margin: 0 auto">
-            <img data-step="5" data-intro="Trending events!" data-position='left' src="images/5_1.png" alt="events" style="width: 121%"/><br/>
+            <img data-step="5" data-intro="Trending events, size of the Bubble corresponds to popularity of the event" data-position='left' src="images/5_1.png" alt="events" style="width: 121%"/><br/>
         </div>
     </div>
 
@@ -168,7 +166,7 @@
 <!--<a class="btn btn-large btn-success" href="javascript:void(0);" id="showIntro">Show me how</a>-->
 <div style="padding-right: 2%">
     <button class=" pull-right btn btn-large btn-success" id="showIntro" style="display: none">Show Tour</button>
-    <a href="/guest" data-step="12" data-intro="continue to awesomeness" class=" pull-right btn btn-large btn-danger" id="continue">Continue to our application</a>
+    <a href="/guest" data-step="12" data-intro="Continue to Awesomeness" class=" pull-right btn btn-large btn-success" id="continue">Continue >></a>
 </div>
 </body>
 </html>

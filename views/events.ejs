@@ -78,8 +78,21 @@
            setTimeout(function(){
               // alert("time out click")
             //   window.location.replace("/");
+               $("#eventName").val("");
+               $("#eventVal").val("");
                $("#cancelBtn").click();
            }, 2000);
+        });
+        $("#eventbtn1").on('click', function(){
+            //toastr.success("Event successfully created");
+           setTimeout(function(){
+              // alert("time out click")
+            //   window.location.replace("/");
+               //id="sd1"
+               $("#sd1").val("");
+               $("#sd2").val("");
+               $("#cancelBtn1").click();
+           }, 600);
         });
 
     });
@@ -173,9 +186,10 @@ if ( pair.formattedValue === 'Hacathon' ||
        <ul class="nav navmenu-nav" style="padding-right: 5%;padding-top: 12%;">
         <!--<li><a href="#">Create event</a></li>-->
         <!-- <li><h5>Create event</h5></li> -->
+           <div id="firstSide" style="border: 1px ridge;background-color: white;padding: 6%;">
         <li><h5><i><font color='maroon'><b>Create a new event</b></font></i></h5></li>
           <!--<form role="form">-->
-          <div>
+          <!--<div>-->
 
         <div class="form-group" style="margin-bottom: 7px;">
             <!-- <label for="eventName">Enter event name</label> -->
@@ -185,7 +199,7 @@ if ( pair.formattedValue === 'Hacathon' ||
         <div class="form-group" style="margin-bottom: 7px;">
             <!-- <label for="datetimepicker1">Enter event date and time</label> -->
             <div class='input-group date' id='datetimepicker1'>
-              <input type='text' class="form-control input-sm" placeholder="Select Date and Time"/>
+              <input type='text' class="form-control input-sm" placeholder="Select Date and Time" id="eventVal"/>
                   <span class="input-group-addon">
                       <span class="glyphicon glyphicon-calendar">
                       </span>
@@ -205,42 +219,17 @@ if ( pair.formattedValue === 'Hacathon' ||
                 <option value="Techtalk">Techtalk</option>
                 <option value="Winter shopping">Winter shopping</option>
                 <option value="Hackathon">Hackathon</option>
-                
+                <option value="Hackatho2n">Sports</option>
+                <option value="Hackathon2">Fun Fest</option>
+                <option value="Hackatho4n">News</option>
+                <option value="Hackathon4">Illini Tech</option>
+
             </select>
         </div>
         <script type="text/javascript">
             $(function() {
                 //alert("Hello");
                 $('#stwo').selectize({create: true});
-                /*$('select-to').selectize( 
-                    {
-                     persist: false,
-                     maxItems: null,
-                     valueField: 'email',
-                     labelField: 'name',
-                     searchField: ['name', 'email'],
-                     options: [
-                        {email: 'brian@thirdroute.com', name: 'Brian Reavis'},
-                        {email: 'nikola@tesla.com', name: 'Nikola Tesla'},
-                        {email: 'someone@gmail.com'}
-                     ],
-                     render: {
-                        item: function(item, escape) {
-                              return '<div>' +
-                              (item.name ? '<span class="name">' + escape(item.name) + '</span>' : '') +
-                              (item.email ? '<span class="email">' + escape(item.email) + '</span>' : '') +
-                              '</div>';
-                        },
-                        option: function(item, escape) {
-                            var label = item.name || item.email;
-                            var caption = item.name ? item.email : null;
-                            return '<div>' +
-                            '<span class="label">' + escape(label) + '</span>' +
-                            (caption ? '<span class="caption">' + escape(caption) + '</span>' : '') +
-                            '</div>';
-                        }
-                     }  
-                    });*/
 
             });
         </script>
@@ -249,13 +238,15 @@ if ( pair.formattedValue === 'Hacathon' ||
       <!--<button id="eventbtn1"  class="btn btn-danger"> Cancel</button>-->
               <button id="cancelBtn" class=" btn btn-sm btn-danger"  data-toggle="offcanvas" data-recalc="false" data-target=".navmenu" data-canvas=".canvas"> Cancel</button>
       </div>
+           </div>
     <!--</form>-->
-        <li class="divider"></li>
+        <li class="divider" style="padding-top: 9%"></li>
+           <div id="secondSide" style="border: 1px ridge;background-color: white;padding: 6%;">
         <li><h5 style="border-top: 0px solid;padding-top: 17%;"><i><font color='maroon'><b>Search for events</b></font></i></h5></li>
         <div class="form-group" >
            <!--  <label for="datetimepicker3"> Event start time</label> -->
             <div class='input-group date' id='datetimepicker2'>
-              <input type='text' class="form-control input-sm" placeholder="Select Start Date and Time"/>
+              <input type='text' class="form-control input-sm" placeholder="Select Start Date and Time" id="sd1"/>
                   <span class="input-group-addon">
                       <span class="glyphicon glyphicon-calendar">
                       </span>
@@ -265,7 +256,7 @@ if ( pair.formattedValue === 'Hacathon' ||
         <div class="form-group" >
            <!--  <label for="datetimepicker3"> Event end time</label> -->
             <div class='input-group date' id='datetimepicker3'>
-              <input type='text' class="form-control input-sm" placeholder="Select End Date and Time"/>
+              <input type='text' class="form-control input-sm" placeholder="Select End Date and Time" id="sd2"/>
                   <span class="input-group-addon">
                       <span class="glyphicon glyphicon-calendar">
                       </span>
@@ -278,18 +269,7 @@ if ( pair.formattedValue === 'Hacathon' ||
                 $('#datetimepicker3').datetimepicker();
             });
         </script>
-        <!-- <h4><center>OR</center></h4> -->
 
-      <!-- <ul class="nav navmenu-nav">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">By category <b class="caret"></b></a>
-          <ul class="dropdown-menu navmenu-nav">
-            <li><a href="#">Techtalk</a></li>
-            <li><a href="#">Winter shopping</a></li>
-            <li><a href="#">Hackathon</a></li>
-          </ul>
-        </li>
-      </ul> -->
       <div class="form-group" style="padding-left: 22%;">
             <!-- <label for="select-to" style="margin-top: 13px;">Select category</label> -->
             <select id="stwo2">
@@ -303,13 +283,15 @@ if ( pair.formattedValue === 'Hacathon' ||
                 <option value="Hackathon4">Illini Tech</option> 
             </select>
         </div>
-    </div>
+    <!--</div>-->
 
     <div style="padding-left: 22%;">
-    <button id="eventbtn" type="submit" class="btn btn-sm btn-success">Search</button>
+    <button id="eventbtn1" type="submit" class="btn btn-sm btn-success">Search</button>
     <!--<button id="eventbtn1"  class="btn btn-danger"> Cancel</button>-->
-    <button id="cancelBtn" class=" btn btn-sm btn-danger"  data-toggle="offcanvas" data-recalc="false" data-target=".navmenu" data-canvas=".canvas">Cancel</button>
+    <button id="cancelBtn1" class=" btn btn-sm btn-danger"  data-toggle="offcanvas" data-recalc="false" data-target=".navmenu" data-canvas=".canvas">Cancel</button>
   </div>
+               </div>
+           </ul>
     </div> 
     <div class="canvas">
       <!--<div class="navbar navbar-default navbar-fixed-top canvas-slid" style="left: 300px;">-->
