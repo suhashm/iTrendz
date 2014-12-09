@@ -6,8 +6,6 @@
 
 var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 
-// load up the user model
-//var User       = require('../app/models/user');
 
 // load the auth variables
 var configAuth = require('./auth');
@@ -21,10 +19,7 @@ module.exports = function(passport) {
 
     // used to deserialize the user
     passport.deserializeUser(function (id, done) {
-        // User.findById(id, function(err, user) {
-        //done(err, user);
         done(null, id);
-        //});
     });
     passport.use(new GoogleStrategy({
 
@@ -34,13 +29,10 @@ module.exports = function(passport) {
 
         },
         function(token, refreshToken, profile, done) {
-            //console.log(profile._json);
             console.log(profile.displayName);
             var userOb = {};
             userOb.id = profile.id;
             userOb.email = profile.displayName;
-            //return done(null, profile._json);
-            //return done(null, userOb);
             return done(null, userOb);
         }
 

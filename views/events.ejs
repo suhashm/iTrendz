@@ -96,12 +96,7 @@
         });
 
     });
-//    $("iframe").load(function(){
-//
-//        //    var damageMessage = $(this).contents().find(".mw_error").text();
-//        alert("done loading");
-//
-//    });
+
     function filterSingleValue() {
         console.log(activeSheet);
         activeSheet.applyFilterAsync(
@@ -328,7 +323,11 @@ if ( pair.formattedValue === 'Hackathon' ||
         <h4 class="modal-title text-center" id="myModalLabel">Check out your friends going to this event</h4>
       </div>
       <div class="modal-body123123">
+
          <iframe src="fpic.html" style="width:100%"/>
+          <button type="button" class="btn btn-default">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -338,14 +337,10 @@ if ( pair.formattedValue === 'Hackathon' ||
   </div>
 </div>
 <div class="col-sm-10">
-<!--<div class="col-sm-2">    -->
-    <!--<button id="lgOut" class="col-sm-2 btn btn-default"> <i class="fa fa-sign-out"></i>logout</button>-->
-<!--</div>-->
 
 <div id="dialog"></div>
 <div id="dialog2"></div>
 <div id="dialog3"></div>
-<!--script src="view/js/jquery.custombox.js"></script-->
 
 </body>
 <div id="dialog2"></div><div id="dialog3"></div>

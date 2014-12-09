@@ -3,7 +3,6 @@
  */
 // app/routes.js
 module.exports = function(app, passport) {
-//module.exports = function(app) {
 
     // =====================================
     // HOME PAGE (with login links) ========
@@ -16,7 +15,6 @@ module.exports = function(app, passport) {
     app.get('/profile', isLoggedIn, function(req, res) {
         res.render('events.ejs', {
             user : req.user // get the user out of session and pass to template
-            //user : req // get the user out of session and pass to template
         });
     });
     app.get('/guest',function(req, res) {
